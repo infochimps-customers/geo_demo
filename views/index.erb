@@ -1,0 +1,14 @@
+<script type="text/javascript"> 
+  $(document).ready(function(){
+    initializeGeo()
+  })
+</script>
+
+<div id="header">
+  <div style="padding:0px 20px">
+    Places in <input id="address" class="input" type="textbox" value="Austin, TX"><span style="display:none">from<input id="from" class="input date" value="<%= Date.today %>"></input>to<input id="to" class="input date" value="<%= Date.today %>"></input></span>
+    <input id="submit" type="button" value="Show me the places!" onclick="geocodeAddress()">
+  </div>
+</div>
+
+<div id="map_canvas"></div>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <link href="stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <!-- Include Google Maps javascript library -->
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+                                              
+    <!-- Javascript that will execute our API call via the Rails app and plot the results onto the map -->
+    <script src="javascripts/geo.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
