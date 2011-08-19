@@ -2,7 +2,10 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra/base'
 require 'json'        
-require 'faraday'
+require 'faraday'      
+
+# support yaml and heroku config vars, preferring ENV for heroku
+CONFIG = (YAML.load_file("#{File.dirname(__FILE__)}/config.yml") rescue {}).merge(ENV)
 
 class GeoDemo < Sinatra::Application 
   
@@ -19,16 +22,17 @@ class GeoDemo < Sinatra::Application
     radius  = params[:radius] ||  10000
     source  = params[:source] || "encyclopedic/dbpedia/articles"
     # pass a "source" parameter to try any other Infochimps POI endpoints, i.e. "geo/location/infochimps/locationary" 
-
-    url = "http://planetof.infochimps.com/" + source + "/search_nearby?" +
-      "&g.latitude="  + lat.to_s    + 
-      "&g.longitude=" + lng.to_s    +
-      "&g.radius="    + radius.to_s +
+                                                                          
+    url = "http://apistag.infochimps.com/" + source + "/search_nearby?" +
+      "_apikey="      + CONFIG["api_key"]  +
+      "&g.latitude="  + lat.to_s           + 
+      "&g.longitude=" + lng.to_s           +
+      "&g.radius="    + radius.to_s
       "&f.q=*" # not limiting the query to a particular keyword
      
     buffer = Faraday.new(url).get
     result = JSON.parse(buffer.body)   
-    
+    p url
     content_type :json 
     result.to_json
   end

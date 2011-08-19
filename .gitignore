@@ -1,0 +1,2 @@
+# Ignore config.yml to prevent committing sensitive info (such as API keys) to the Git repo
+/config.yml

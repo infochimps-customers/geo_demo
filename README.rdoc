@@ -2,6 +2,19 @@
 
 = Overview
 
-== Blah
+This is a basic Sinatra (http://sinatrarb.com) app demonstrating how to execute calls to Infochimps' Geo APIs and plot the results on a map.      
 
-Stuff.
+== Installation
+
+Installation notes here...
+
+config.example.yml => config.yml
+rake heroku:config (to load config to heroku as environment variables)
+
+== Documentation
+
+Learn more about Infochimps' Geo APIs at http://geo.infochimps.com.
+
+== Live Demo
+
+Check out a live demo of this app at http://geo-demo.heroku.com.
