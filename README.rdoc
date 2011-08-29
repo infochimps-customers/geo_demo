@@ -13,7 +13,7 @@ rake heroku:config (to load config to heroku as environment variables)
 
 == Documentation
 
-Learn more about Infochimps' Geo APIs at http://geo.infochimps.com.
+Learn more about Infochimps' Geo APIs at http://www.infochimps.com/apis/geo.
 
 == Live Demo
 
