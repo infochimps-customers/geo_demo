@@ -23,8 +23,8 @@ class GeoDemo < Sinatra::Application
     source  = params[:source] || "encyclopedic/dbpedia/articles"
     # pass a "source" parameter to try any other Infochimps POI endpoints, i.e. "geo/location/infochimps/locationary" 
                                                                           
-    url = "http://apistag.infochimps.com/" + source + "/search_nearby?" +
-      "_apikey="      + CONFIG["api_key"]  +
+    url = "http://api.infochimps.com/" + source + "/search?" +
+      "_apikey="      + 'flip69'           +
       "&g.latitude="  + lat.to_s           + 
       "&g.longitude=" + lng.to_s           +
       "&g.radius="    + radius.to_s
