@@ -20,7 +20,7 @@ class GeoDemo < Sinatra::Application
     lat     = params[:lat]    ||  30.26
     lng     = params[:lng]    || -97.73
     radius  = params[:radius] ||  10000
-    source  = params[:source] || "encyclopedic/dbpedia/articles"
+    source  = params[:source] || "encyclopedic/wikipedia/dbpedia/wikipedia_articles"
     # pass a "source" parameter to try any other Infochimps POI endpoints, i.e. "geo/location/infochimps/locationary" 
                                                                           
     url = "http://api.infochimps.com/" + source + "/search?" +
